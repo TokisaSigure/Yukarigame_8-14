@@ -22,11 +22,15 @@ namespace WpfApplication1
     {
         int text_Num = 0;
         CLass.SE BGM = new CLass.SE();
+        CLass.ImageClass image = new CLass.ImageClass();
         Boolean BGMPlaying;
+        ImageBrush Background = new ImageBrush();
+
         public MainWindow()
         {
             InitializeComponent();
             BGMPlaying = true;
+            Background.ImageSource = image.InputImage("BaxkGround-beta.jpg");//背景設定要処理
         }
 
         private void TextClick(object sender, MouseButtonEventArgs e)
@@ -59,6 +63,7 @@ namespace WpfApplication1
             this.SaveButton.Visibility = Visibility.Visible;
             this.LoadButton.Visibility = Visibility.Visible;
             this.BGMStop.Visibility = Visibility.Visible;
+            this.mainGrid.Background = Background;//背景設定
             this.Start_Button.Visibility = Visibility.Hidden;
             this.Title_logo.Visibility = Visibility.Hidden;
             BGM.playSE("snowsnow.mp3");
