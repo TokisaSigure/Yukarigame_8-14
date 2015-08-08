@@ -11,23 +11,26 @@
             <RowDefinition Height="318*"/>
             <RowDefinition Height="131*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Yukari" HorizontalAlignment="Left" Height="232" Margin="448,87,0,0" VerticalAlignment="Top" Width="184" Source="Image/Yukari/Start.png" Grid.RowSpan="2"/>
+        <Image x:Name="Yukari" HorizontalAlignment="Left" Height="232" Margin="448,87,0,0" VerticalAlignment="Top" Width="184" Source="Image/Yukari/Start.png" Grid.RowSpan="2" Visibility="Hidden" MouseLeftButtonUp="Title_Click"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="87,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="545" Foreground="#FFF7F2F2" TextAlignment="Center" MouseLeftButtonDown="TextClick" Grid.Row="1">
+        <TextBlock x:Name="Text_window" HorizontalAlignment="Left" Margin="87,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="545" Foreground="#FFF7F2F2" TextAlignment="Center" MouseLeftButtonDown="TextClick" Grid.Row="1" Visibility="Hidden">
             <TextBlock.Background>
                 <ImageBrush ImageSource="Image/コメント欄.png"/>
-            </TextBlock.Background><Run Language="ja-jp" Text="テストメッセージ"/></TextBlock>
-        <Button x:Name="SaveButton" Content="" HorizontalAlignment="Left" Width="87" Height="40" VerticalAlignment="Top" Grid.Row="1" Margin="0,45,0,0" Click="SaveButton_Click">
+            </TextBlock.Background><Run Language="ja-jp" Text="テストメッセージ"/><InlineUIContainer>
+        	</InlineUIContainer></TextBlock>
+        <Button x:Name="SaveButton" Content="" HorizontalAlignment="Left" Width="87" Height="40" VerticalAlignment="Top" Grid.Row="1" Margin="0,45,0,0" Click="SaveButton_Click" Visibility="Hidden">
             <Button.Background>
                 <ImageBrush ImageSource="Image/save.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="LoadButton" Content="" HorizontalAlignment="Left" Height="44" Margin="0,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87" Click="LoadButton_Click">
+        <Button x:Name="LoadButton" Content="" HorizontalAlignment="Left" Height="44" Margin="0,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87" Click="LoadButton_Click" Visibility="Hidden">
             <Button.Background>
                 <ImageBrush ImageSource="Image/Load.png"/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="name" HorizontalAlignment="Left" Height="36" Margin="87,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"><Run Language="ja-jp" Text="名前を表示したいなって"/></TextBlock>
+        <TextBlock x:Name="name" HorizontalAlignment="Left" Height="36" Margin="87,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Visibility="Hidden"><Run Language="ja-jp" Text="名前を表示したいなって"/></TextBlock>
+        <Button x:Name="Start_Button" Content="すたーと" HorizontalAlignment="Left" Height="114" Margin="92,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="452" FontSize="72" Click="Start_Button_Click"/>
+        <TextBlock x:Name="Title_logo" HorizontalAlignment="Left" Height="230" Margin="0,52,0,0" TextWrapping="Wrap" Text="結月ゆかりといちゃいちゃしたい！！" VerticalAlignment="Top" Width="622" FontSize="36" TextAlignment="Center"/>
 
     </Grid>
 </Window>

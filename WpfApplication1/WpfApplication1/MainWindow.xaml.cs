@@ -41,5 +41,21 @@ namespace WpfApplication1
         {
 
         }
+
+        private void Title_Click(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void Start_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.name.Visibility = Visibility.Visible;
+            this.Yukari.Visibility = Visibility.Visible;
+            this.Text_window.Visibility = Visibility.Visible;
+            this.SaveButton.Visibility = Visibility.Visible;
+            this.LoadButton.Visibility = Visibility.Visible;
+            this.Start_Button.Visibility = Visibility.Hidden;
+            this.Title_logo.Visibility = Visibility.Hidden;
+        }
     }
 }
