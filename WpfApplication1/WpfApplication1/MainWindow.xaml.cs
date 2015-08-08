@@ -21,6 +21,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         int text_Num = 0;
+        CLass.SE BGM = new CLass.SE();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace WpfApplication1
         {
             ++text_Num;
             this.name.Text = ("" + text_Num);
+            BGMChange();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -56,6 +58,18 @@ namespace WpfApplication1
             this.LoadButton.Visibility = Visibility.Visible;
             this.Start_Button.Visibility = Visibility.Hidden;
             this.Title_logo.Visibility = Visibility.Hidden;
+            BGM.playSE("snowsnow.mp3");
+        }
+
+        void BGMChange()
+        {
+            switch (text_Num)
+            {
+                case 20: BGM.playSE("cafe.mp3"); break;
+                case 35: BGM.playSE("threedays.mp3"); break;
+                case 50: BGM.playSE("towairo_goshoku.mp3"); break;
+                default: break;
+            }
         }
     }
 }
