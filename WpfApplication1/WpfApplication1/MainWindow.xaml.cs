@@ -22,9 +22,11 @@ namespace WpfApplication1
     {
         int text_Num = 0;
         CLass.SE BGM = new CLass.SE();
+        Boolean BGMPlaying;
         public MainWindow()
         {
             InitializeComponent();
+            BGMPlaying = true;
         }
 
         private void TextClick(object sender, MouseButtonEventArgs e)
@@ -56,6 +58,7 @@ namespace WpfApplication1
             this.Text_window.Visibility = Visibility.Visible;
             this.SaveButton.Visibility = Visibility.Visible;
             this.LoadButton.Visibility = Visibility.Visible;
+            this.BGMStop.Visibility = Visibility.Visible;
             this.Start_Button.Visibility = Visibility.Hidden;
             this.Title_logo.Visibility = Visibility.Hidden;
             BGM.playSE("snowsnow.mp3");
@@ -70,6 +73,15 @@ namespace WpfApplication1
                 case 50: BGM.playSE("towairo_goshoku.mp3"); break;
                 default: break;
             }
+        }
+
+        private void BGM停止_Click(object sender, RoutedEventArgs e)
+        {
+            if (BGMPlaying)
+                BGM.pause();
+            else
+                BGM.play();
+            BGMPlaying = !BGMPlaying;
         }
     }
 }

@@ -19,8 +19,24 @@ namespace WpfApplication1.CLass
         public void playSE(string se)
         {
             Player.settings.setMode("loop",true);//loop再生化
+            Player.settings.volume = 70;
             Player.URL = (@"BGM\" + se);
             Player.controls.play();
+        }
+
+        public void play()
+        {
+            Player.controls.play();
+        }
+
+        public void stopSE()
+        {
+            Player.controls.stop();
+        }
+
+        public void pause()
+        {
+            Player.controls.pause();
         }
 
     }
