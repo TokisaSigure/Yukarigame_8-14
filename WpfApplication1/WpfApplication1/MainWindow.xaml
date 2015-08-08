@@ -3,6 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="480" Width="640">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="318*"/>
+            <RowDefinition Height="131*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Yukari" HorizontalAlignment="Left" Height="232" Margin="448,87,0,0" VerticalAlignment="Top" Width="184" Source="Image/Yukari/Start.png" Grid.RowSpan="2"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="87,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="545" Foreground="#FFF7F2F2" TextAlignment="Center" MouseLeftButtonDown="TextClick" Grid.Row="1">
+            <TextBlock.Background>
+                <ImageBrush ImageSource="Image/コメント欄.png"/>
+            </TextBlock.Background><Run Language="ja-jp" Text="テストメッセージ"/></TextBlock>
+        <Button x:Name="SaveButton" Content="" HorizontalAlignment="Left" Width="87" Height="40" VerticalAlignment="Top" Grid.Row="1" Margin="0,45,0,0" Click="SaveButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/save.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="LoadButton" Content="" HorizontalAlignment="Left" Height="44" Margin="0,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87" Click="LoadButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/Load.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="name" HorizontalAlignment="Left" Height="36" Margin="87,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"><Run Language="ja-jp" Text="名前を表示したいなって"/></TextBlock>
+
     </Grid>
 </Window>

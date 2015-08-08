@@ -94,15 +94,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\Load.png">
+    <Resource Include="Image\Load.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Image\save.png">
+    </Resource>
+    <Resource Include="Image\save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Image\コメント欄.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
+    <Resource Include="Image\コメント欄.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Image\Yukari\Start.png">
