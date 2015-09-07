@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YukariGames;
 
 namespace WpfApplication1
 {
@@ -21,8 +23,11 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         int text_Num = 0;
+        ArrayList mainText;
+        Brush fontColor;//文字色を変えるための一時的なもの・・・かも？
         CLass.SE BGM = new CLass.SE();
         CLass.ImageClass image = new CLass.ImageClass();
+        TextLoadClass textLoadClass = new TextLoadClass();
         Boolean BGMPlaying;
         ImageBrush Background = new ImageBrush();
 
@@ -30,14 +35,33 @@ namespace WpfApplication1
         {
             InitializeComponent();
             BGMPlaying = true;
+            this.Text_window.Foreground = new SolidColorBrush(Colors.White); ;
             Background.ImageSource = image.InputImage("BaxkGround-beta.jpg");//背景設定要処理
+            textLoadClass.TextRoad_Current(ref mainText,"Sample.txt","UTF-8");
+        }
+
+        private void textView()
+        {
+           if (text_Num - 1 < mainText.Count && text_Num > 0)
+                {
+                    this.Text_window.Text = (string)mainText[text_Num - 1];
+                }
+
         }
 
         private void TextClick(object sender, MouseButtonEventArgs e)
         {
-            ++text_Num;
-            this.name.Text = ("" + text_Num);
-            BGMChange();
+            try
+            {
+                ++text_Num;
+                this.name.Text = ("" + text_Num);
+                textView();
+                BGMChange();
+            }
+            catch
+            {
+                MessageBox.Show("なんかエラー出た！テキストデータの読み込み領域突破とかしてないかな？", "えらーめっせーじ", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -73,6 +97,7 @@ namespace WpfApplication1
         {
             switch (text_Num)
             {
+                case 0: BGM.playSE("snowsnow.mp3"); break;
                 case 20: BGM.playSE("cafe.mp3"); break;
                 case 35: BGM.playSE("threedays.mp3"); break;
                 case 50: BGM.playSE("towairo_goshoku.mp3"); break;
@@ -87,6 +112,22 @@ namespace WpfApplication1
             else
                 BGM.play();
             BGMPlaying = !BGMPlaying;
+        }
+
+        private void TextClickRight(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (text_Num > 0)
+                    --text_Num;
+                this.name.Text = ("" + text_Num);
+                textView();
+                BGMChange();
+            }
+            catch
+            {
+                MessageBox.Show("なんかエラー出た！テキストデータの読み込み領域突破とかしてないかな？", "えらーめっせーじ", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
     }
 }
