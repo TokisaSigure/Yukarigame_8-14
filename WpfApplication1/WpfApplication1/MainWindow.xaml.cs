@@ -24,19 +24,23 @@ namespace WpfApplication1
     {
         int text_Num = 0;
         ArrayList mainText;
-        Brush fontColor;//文字色を変えるための一時的なもの・・・かも？
         CLass.SE BGM = new CLass.SE();
         CLass.ImageClass image = new CLass.ImageClass();
         TextLoadClass textLoadClass = new TextLoadClass();
         Boolean BGMPlaying;
         ImageBrush Background = new ImageBrush();
+        
+        /// <summary>
+        /// 画像切り替えよう変数
+        /// </summary>
+        BitmapImage bitmapImage = new BitmapImage();
 
         public MainWindow()
         {
             InitializeComponent();
             BGMPlaying = true;
             this.Text_window.Foreground = new SolidColorBrush(Colors.White); ;
-            Background.ImageSource = image.InputImage("BaxkGround-beta.jpg");//背景設定要処理
+            Background.ImageSource = image.InputImage(Properties.Resources.BACKGROUND);//背景設定要処理
             textLoadClass.TextRoad_Current(ref mainText,"Sample.txt","UTF-8");
         }
 
@@ -114,6 +118,35 @@ namespace WpfApplication1
 
         }
 
+        void ImageChange()
+        {
+            if (text_Num - 1 < mainText.Count && text_Num > 0)
+            {
+                string checkText = (string)mainText[text_Num - 1];
+                if(checkText =="（にかっ１）")
+                {
+                   this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_1);
+                   ++text_Num;
+                }
+                else if (checkText == "（にかっ２）")
+                {
+                    this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_2);
+                    ++text_Num;
+                }
+                else if (checkText == "（元気１）")
+                {
+                    this.Yukari.Source = image.InputImage(Properties.Resources.FUNNY_FUNNY_1);
+                    ++text_Num;
+                }
+                else if (checkText == "（元気２）")
+                {
+                    this.Yukari.Source = image.InputImage(Properties.Resources.FUNNY_FUNNY_2);
+                    ++text_Num;
+                }
+            }
+            
+        }
+
 
         private void TextClick(object sender, MouseButtonEventArgs e)
         {
@@ -121,6 +154,7 @@ namespace WpfApplication1
             {
                 ++text_Num;
                 BGMChange();
+                ImageChange();
                 this.name.Text = ("" + text_Num);
                 textView();
             }
@@ -132,12 +166,12 @@ namespace WpfApplication1
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(Properties.Resources.NULL);
         }
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(Properties.Resources.NULL);
         }
 
         private void Title_Click(object sender, MouseButtonEventArgs e)
@@ -157,6 +191,7 @@ namespace WpfApplication1
             this.Start_Button.Visibility = Visibility.Hidden;
             this.Title_logo.Visibility = Visibility.Hidden;
             BGM.playSE(Properties.Resources.SNOW);
+            this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_1);
         }
 
         private void BGM停止_Click(object sender, RoutedEventArgs e)
@@ -168,6 +203,11 @@ namespace WpfApplication1
             BGMPlaying = !BGMPlaying;
         }
 
+        /// <summary>
+        /// テキストブロックが右クリックされたときの処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextClickRight(object sender, MouseButtonEventArgs e)
         {
             try
@@ -176,6 +216,7 @@ namespace WpfApplication1
                     --text_Num;
                 this.name.Text = ("" + text_Num);
                 BGMChange_Back();
+                //ImageChange();
                 textView();
             }
             catch

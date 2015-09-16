@@ -117,9 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BACKGROUND" xml:space="preserve">
+    <value>BaxkGround-beta.abs</value>
+    <comment>背景1、森</comment>
+  </data>
   <data name="CAFE" xml:space="preserve">
     <value>cafe.abs</value>
     <comment>曲名</comment>
+  </data>
+  <data name="FUNNY_FUNNY_1" xml:space="preserve">
+    <value>funny_funny1.abs</value>
+    <comment>ゆかりさん立ち絵、元気な笑顔1</comment>
+  </data>
+  <data name="FUNNY_FUNNY_2" xml:space="preserve">
+    <value>funny_funny2.abs</value>
+    <comment>ゆかりさん立ち絵、元気な笑顔2</comment>
+  </data>
+  <data name="NIKA_FUNNY_1" xml:space="preserve">
+    <value>nika1.abs</value>
+    <comment>ゆかりさん立ち絵、にかっとした笑顔1</comment>
+  </data>
+  <data name="NIKA_FUNNY_2" xml:space="preserve">
+    <value>nika2.abs</value>
+    <comment>ゆかりさん立ち絵、にかっとした笑顔2</comment>
+  </data>
+  <data name="NULL" xml:space="preserve">
+    <value>未実装です。</value>
+    <comment>未実装通知</comment>
   </data>
   <data name="SNOW" xml:space="preserve">
     <value>snowsnow.abs</value>

@@ -20,7 +20,7 @@ namespace WpfApplication1.CLass
         {
             Player.settings.setMode("loop",true);//loop再生化
             Player.settings.volume = 70;
-            Player.URL = (@"BGM\" + se);
+            Player.URL = (@"data\" + se);
             Player.controls.play();
         }
 

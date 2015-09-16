@@ -61,11 +61,65 @@ namespace WpfApplication1.Properties {
         }
         
         /// <summary>
+        ///   BaxkGround-beta.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string BACKGROUND {
+            get {
+                return ResourceManager.GetString("BACKGROUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   cafe.abs に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string CAFE {
             get {
                 return ResourceManager.GetString("CAFE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   funny_funny1.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string FUNNY_FUNNY_1 {
+            get {
+                return ResourceManager.GetString("FUNNY_FUNNY_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   funny_funny2.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string FUNNY_FUNNY_2 {
+            get {
+                return ResourceManager.GetString("FUNNY_FUNNY_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   nika1.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NIKA_FUNNY_1 {
+            get {
+                return ResourceManager.GetString("NIKA_FUNNY_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   nika2.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NIKA_FUNNY_2 {
+            get {
+                return ResourceManager.GetString("NIKA_FUNNY_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   未実装です。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NULL {
+            get {
+                return ResourceManager.GetString("NULL", resourceCulture);
             }
         }
         
