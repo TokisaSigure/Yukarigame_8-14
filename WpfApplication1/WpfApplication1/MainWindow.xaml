@@ -11,9 +11,9 @@
             <RowDefinition Height="318*"/>
             <RowDefinition Height="131*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Yukari" HorizontalAlignment="Left" Height="232" Margin="448,87,0,0" VerticalAlignment="Top" Width="184" Source="Image/Yukari/Start.png" Grid.RowSpan="2" Visibility="Hidden" MouseLeftButtonUp="Title_Click"/>
+        <Image x:Name="Yukari" HorizontalAlignment="Left" Height="232" Margin="448,87,0,0" VerticalAlignment="Top" Width="184" Source="Image/Yukari/Start.png" Grid.RowSpan="2" Visibility="Hidden" MouseLeftButtonUp="Title_Click" />
 
-        <TextBlock x:Name="Text_window" HorizontalAlignment="Left" Margin="85,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="545" Foreground="#FFF7F2F2" MouseLeftButtonDown="TextClick" Grid.Row="1" Visibility="Hidden" MouseRightButtonDown="TextClickRight" FontSize="22">
+        <TextBlock x:Name="Text_window" HorizontalAlignment="Left" Margin="85,0,0,0" Padding="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="545" Foreground="#FFF7F2F2" MouseLeftButtonDown="TextClick" Grid.Row="1" Visibility="Hidden" MouseRightButtonDown="TextClickRight" FontSize="22">
             <TextBlock.Background>
                 <ImageBrush ImageSource="Image/コメント欄.png"/>
             </TextBlock.Background><Run Language="ja-jp" Text="テストメッセージ"/><InlineUIContainer>

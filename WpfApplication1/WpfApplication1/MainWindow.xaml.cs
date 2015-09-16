@@ -49,14 +49,80 @@ namespace WpfApplication1
 
         }
 
+        void BGMChange()
+        {
+            /*-------------BGM変更新定義----------------*/
+            //指定されてる配列がオーバーしていないかのチェック
+            if (text_Num - 1 < mainText.Count && text_Num > 0)
+            {
+                string checkText = (string)mainText[text_Num - 1];
+                //C#って"string.Equals"呼ばなくても比較してくれるんだぜすげー！！(実際は自動で呼び出しています)
+                if (checkText == "（スノウ）" || checkText == "(snow)")
+                {
+                    BGM.playSE(Properties.Resources.SNOW);
+                    ++text_Num;
+                }
+                else if (checkText == "（カフェ）" || checkText == "(cafe)")
+                {
+                    BGM.playSE(Properties.Resources.CAFE);
+                    ++text_Num;
+                }
+                else if (checkText == "（三日後）" || checkText == "(three)")
+                {
+                    BGM.playSE(Properties.Resources.THREE);
+                    ++text_Num;
+                }
+                else if (checkText == "（永久）" || checkText == "(towairo)")
+                {
+                    BGM.playSE(Properties.Resources.TOWA);
+                    ++text_Num;
+                }
+
+            }
+        }
+
+        void BGMChange_Back()
+        {
+            /*-------------BGM変更新定義----------------*/
+            //指定されてる配列がオーバーしていないかのチェック
+            if (text_Num - 1 < mainText.Count && text_Num > 0)
+            {
+                string checkText = (string)mainText[text_Num - 1];
+                //C#って"string.Equals"呼ばなくても比較してくれるんだぜすげー！！(実際は自動で呼び出しています)
+                if (checkText == "（スノウ）" || checkText == "(snow)")
+                {
+                    BGM.playSE(Properties.Resources.SNOW);
+                    --text_Num;
+                }
+                else if (checkText == "（カフェ）" || checkText == "(cafe)")
+                {
+                    BGM.playSE(Properties.Resources.CAFE);
+                    --text_Num;
+                }
+                else if (checkText == "（三日後）" || checkText == "(three)")
+                {
+                    BGM.playSE(Properties.Resources.THREE);
+                    --text_Num;
+                }
+                else if (checkText == "（永久）" || checkText == "(towairo)")
+                {
+                    BGM.playSE(Properties.Resources.TOWA);
+                    --text_Num;
+                }
+
+            }
+
+        }
+
+
         private void TextClick(object sender, MouseButtonEventArgs e)
         {
             try
             {
                 ++text_Num;
+                BGMChange();
                 this.name.Text = ("" + text_Num);
                 textView();
-                BGMChange();
             }
             catch
             {
@@ -90,19 +156,7 @@ namespace WpfApplication1
             this.mainGrid.Background = Background;//背景設定
             this.Start_Button.Visibility = Visibility.Hidden;
             this.Title_logo.Visibility = Visibility.Hidden;
-            BGM.playSE("snowsnow.mp3");
-        }
-
-        void BGMChange()
-        {
-            switch (text_Num)
-            {
-                case 0: BGM.playSE("snowsnow.mp3"); break;
-                case 20: BGM.playSE("cafe.mp3"); break;
-                case 35: BGM.playSE("threedays.mp3"); break;
-                case 50: BGM.playSE("towairo_goshoku.mp3"); break;
-                default: break;
-            }
+            BGM.playSE(Properties.Resources.SNOW);
         }
 
         private void BGM停止_Click(object sender, RoutedEventArgs e)
@@ -121,8 +175,8 @@ namespace WpfApplication1
                 if (text_Num > 0)
                     --text_Num;
                 this.name.Text = ("" + text_Num);
+                BGMChange_Back();
                 textView();
-                BGMChange();
             }
             catch
             {
