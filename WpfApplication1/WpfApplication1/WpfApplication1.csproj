@@ -87,18 +87,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="data\cafe.abs">
+    <Content Include="data\cafe.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="data\snowsnow.abs">
+    </Content>
+    <Content Include="data\snowsnow.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="data\threedays.abs">
+    </Content>
+    <Content Include="data\threedays.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="data\towairo_goshoku.abs">
+    </Content>
+    <Content Include="data\towairo_goshoku.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,16 +129,16 @@
     <Resource Include="Image\BGM停止.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="data\nika2.abs">
+    <Content Include="data\nika2.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="data\BaxkGround-beta.abs">
+    </Content>
+    <Content Include="data\BaxkGround-beta.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Image\コメント欄.png" />
-    <Resource Include="data\nika1.abs">
+    <Content Include="data\nika1.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="MediaPlayer">
@@ -170,14 +170,14 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="data\funny_funny1.abs">
+    <Content Include="data\funny_funny1.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="data\funny_funny2.abs">
+    <Content Include="data\funny_funny2.abs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\bee.abs">
