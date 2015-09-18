@@ -88,7 +88,8 @@ namespace YukariGames
             }
 
         }
-/*
+        #region 参考までにどうぞ
+        /*
         public static void SpecialMes(ref ArrayList al)
         {
             string rootPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);//ドキュメントまでのパス
@@ -113,6 +114,7 @@ namespace YukariGames
 
         }
         */
+        #endregion
 
         /// <summary>
         /// ファイルをロードするための汎用クラス、テキストデータ用
@@ -158,6 +160,38 @@ namespace YukariGames
         {
             string rootPath = Environment.CurrentDirectory;//デスクトップまでのパス
             string Resource = @"\text\";//テキストデータの場所
+            string line = ""; //文字列を読み込むためのstring型変数
+            al = new ArrayList();//文字を格納するための変数、List配列、オブジェクト型
+            try
+            {
+                //StreamReader、恐らく名前の通りにストリームを取得する変数型だと思われる、改行をnullとみなすので、改行で区切りとなる
+                using (StreamReader sr = new StreamReader(rootPath + Resource + filename, Encoding.GetEncoding(encode)))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        al.Add(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                //エラー処理、ファイルが見つからなかった場合は、コンソールに表示！・・・表示するコンソールは無いけどね。
+                MessageBox.Show(e.Message, "えらーめっせーじ", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+            return al;
+        }
+
+        /// <summary>
+        /// ファイルの場所まで指定したいときはこちらをどうぞ
+        /// </summary>
+        /// <param name="al">データを格納したいArryListを指定してください</param>
+        /// <param name="filename">読み込みたいふぁるの名前を拡張子込みで渡してください</param>
+        /// <param name="encode">テキストデータのエンコードを渡してください</param>
+        /// <param name="Resource">ファイルの場所を指定してください　例：\text\</param>
+        /// <returns></returns>
+        public ArrayList TextRoad_Folder(ref ArrayList al, string filename, string encode, string Resource)
+        {
+            string rootPath = Environment.CurrentDirectory;//デスクトップまでのパス
             string line = ""; //文字列を読み込むためのstring型変数
             al = new ArrayList();//文字を格納するための変数、List配列、オブジェクト型
             try

@@ -125,6 +125,14 @@
     <value>cafe.abs</value>
     <comment>曲名</comment>
   </data>
+  <data name="ENCODE" xml:space="preserve">
+    <value>UTF-8</value>
+    <comment>文字エンコード</comment>
+  </data>
+  <data name="FOLDER" xml:space="preserve">
+    <value>\data\</value>
+    <comment>コンテンツデータのフォルダー</comment>
+  </data>
   <data name="FUNNY_FUNNY_1" xml:space="preserve">
     <value>funny_funny1.abs</value>
     <comment>ゆかりさん立ち絵、元気な笑顔1</comment>
@@ -132,6 +140,10 @@
   <data name="FUNNY_FUNNY_2" xml:space="preserve">
     <value>funny_funny2.abs</value>
     <comment>ゆかりさん立ち絵、元気な笑顔2</comment>
+  </data>
+  <data name="IMAGELIST" xml:space="preserve">
+    <value>il.abs</value>
+    <comment>イラストリスト</comment>
   </data>
   <data name="NIKA_FUNNY_1" xml:space="preserve">
     <value>nika1.abs</value>

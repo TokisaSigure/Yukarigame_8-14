@@ -24,6 +24,7 @@ namespace WpfApplication1
     {
         int text_Num = 0;
         ArrayList mainText;
+        ArrayList imageList;
         CLass.SE BGM = new CLass.SE();
         CLass.ImageClass image = new CLass.ImageClass();
         TextLoadClass textLoadClass = new TextLoadClass();
@@ -42,6 +43,7 @@ namespace WpfApplication1
             this.Text_window.Foreground = new SolidColorBrush(Colors.White); ;
             Background.ImageSource = image.InputImage(Properties.Resources.BACKGROUND);//背景設定要処理
             textLoadClass.TextRoad_Current(ref mainText,"Sample.txt","UTF-8");
+            textLoadClass.TextRoad_Folder(ref imageList, Properties.Resources.IMAGELIST, Properties.Resources.ENCODE,Properties.Resources.FOLDER);
         }
 
         private void textView()
@@ -81,7 +83,6 @@ namespace WpfApplication1
                     BGM.playSE(Properties.Resources.TOWA);
                     ++text_Num;
                 }
-
             }
         }
 
@@ -123,31 +124,20 @@ namespace WpfApplication1
             if (text_Num - 1 < mainText.Count && text_Num > 0)
             {
                 string checkText = (string)mainText[text_Num - 1];
-                if(checkText =="（にかっ１）")
+                for (int i = 9; i < imageList.Count; i+=2)
                 {
-                   this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_1);
-                   ++text_Num;
+                    if (checkText == (string)imageList[i])
+                    {
+                        this.Yukari.Source = image.InputImage((string)imageList[i+1]);
+                        ++text_Num;
+                    }
                 }
-                else if (checkText == "（にかっ２）")
-                {
-                    this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_2);
-                    ++text_Num;
-                }
-                else if (checkText == "（元気１）")
-                {
-                    this.Yukari.Source = image.InputImage(Properties.Resources.FUNNY_FUNNY_1);
-                    ++text_Num;
-                }
-                else if (checkText == "（元気２）")
-                {
-                    this.Yukari.Source = image.InputImage(Properties.Resources.FUNNY_FUNNY_2);
-                    ++text_Num;
-                }
+
             }
             
         }
 
-
+        #region テキスト左クリック
         private void TextClick(object sender, MouseButtonEventArgs e)
         {
             try
@@ -163,22 +153,30 @@ namespace WpfApplication1
                 MessageBox.Show("なんかエラー出た！テキストデータの読み込み領域突破とかしてないかな？", "えらーめっせーじ", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
+        #endregion
 
+        #region セーブボタン
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(Properties.Resources.NULL);
         }
+        #endregion
 
+        #region ロードボタン
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(Properties.Resources.NULL);
         }
+        #endregion
 
+        #region タイトルクリック(特に意味はないが関連付けられたので残しておくこと
         private void Title_Click(object sender, MouseButtonEventArgs e)
         {
            
         }
+        #endregion
 
+        #region スタートボタン
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
             this.name.Visibility = Visibility.Visible;
@@ -193,7 +191,9 @@ namespace WpfApplication1
             BGM.playSE(Properties.Resources.SNOW);
             this.Yukari.Source = image.InputImage(Properties.Resources.NIKA_FUNNY_1);
         }
+        #endregion
 
+        #region BGM停止ボタン
         private void BGM停止_Click(object sender, RoutedEventArgs e)
         {
             if (BGMPlaying)
@@ -202,7 +202,9 @@ namespace WpfApplication1
                 BGM.play();
             BGMPlaying = !BGMPlaying;
         }
+        #endregion
 
+        #region テキスト右クリック
         /// <summary>
         /// テキストブロックが右クリックされたときの処理
         /// </summary>
@@ -224,5 +226,6 @@ namespace WpfApplication1
                 MessageBox.Show("なんかエラー出た！テキストデータの読み込み領域突破とかしてないかな？", "えらーめっせーじ", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
+        #endregion
     }
 }

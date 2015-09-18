@@ -79,6 +79,24 @@ namespace WpfApplication1.Properties {
         }
         
         /// <summary>
+        ///   UTF-8 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ENCODE {
+            get {
+                return ResourceManager.GetString("ENCODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   \data\ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string FOLDER {
+            get {
+                return ResourceManager.GetString("FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   funny_funny1.abs に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string FUNNY_FUNNY_1 {
@@ -93,6 +111,15 @@ namespace WpfApplication1.Properties {
         internal static string FUNNY_FUNNY_2 {
             get {
                 return ResourceManager.GetString("FUNNY_FUNNY_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   il.abs に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string IMAGELIST {
+            get {
+                return ResourceManager.GetString("IMAGELIST", resourceCulture);
             }
         }
         
